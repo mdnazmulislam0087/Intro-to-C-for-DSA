@@ -1,5 +1,4 @@
-#include <iostream>
-#include <cstring> // for strcpy
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -7,13 +6,13 @@ class Student
 {
 public:
     int id, marks;
-    char name[10001];
+    string name;
     char section;
 
-    Student(int id, const char name[], char section, int marks)
+    Student(int id, string name, char section, int marks)
     {
         this->id = id;
-        strcpy(this->name, name);
+        this->name = name;
         this->section = section;
         this->marks = marks;
     }
@@ -26,10 +25,11 @@ int main()
     for (int t = 0; t < test_case; t++)
     {
         int id, marks;
-        char name[10001];
+        string name;
         char section;
         Student best(1, "Ass", 'A', -1);
-        // cout << best.id << " " << best.name << " " << best.section << " " << best.marks << endl;
+        // cout << best.id << " "<< best.name <<" "<< best.section<<" "<< best.marks<<endl;
+
         for (int i = 0; i < 3; i++)
         {
             cin >> id >> name >> section >> marks;
@@ -47,8 +47,7 @@ int main()
             }
         }
 
-        cout << best.id << " " << best.name << " " << best.section << " " << best.marks << endl;
+        cout << best.id << " " << best.name << " " << best.section << " " << best.marks<<endl;
     }
-
     return 0;
 }
